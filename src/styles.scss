@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.bg {
+    //   background-image: url(https://izontechnology.com/tech_bg.a1855e2fb071c7e782a2.png);
+      background-image: url("assets/images/loginbg.png");
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  
+  
+    .text-field-wrapper {
+      width: 100%;
+      border-radius: 30px;
+    }
+  
+    .rounded-buttons{
+      border-radius: 20px !important;
+      text-align: center !important;  
+      width: 70%;
+    }
+  
+    .mdc-text-field--outlined {
+      --mdc-outlined-text-field-container-shape: 28px !important;
+    }
+  
+    .mat-icon{
+      cursor: pointer;
+    }
+  
+    .form-error-msg {
+      color: #f44336;
+      display: block;
+      padding: 1px 0;
+      position: relative;
+      right: 25%;
+    }

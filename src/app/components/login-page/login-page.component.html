@@ -1,0 +1,48 @@
+<div class="bg">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4 login_div"> 
+      <mat-card class="centeritems">
+        <mat-card-content>
+          <h1>Device Controller</h1>
+          <form [formGroup]="signinForm" (ngSubmit)="signin()" id='loginForm'>
+            <mat-form-field class="text-field-wrapper" appearance="outline">
+              <mat-label>Email Address</mat-label>
+              <input matInput formControlName="emailAddress" maxlength="40">
+            </mat-form-field>
+            <!-- <p *ngIf="signinForm.controls['emailAddress'].hasError('required') && signinForm.controls['emailAddress'].touched" 
+            class="form-error-msg"> Email Address is required </p> -->
+            <p *ngIf="signinForm.controls['emailAddress'].invalid && signinForm.controls['emailAddress'].touched" 
+            class="form-error-msg"> Email Address is invalid </p>
+            <mat-form-field class="text-field-wrapper" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" required maxlength="20"  mat-icon-button aria-label="Clear">
+              <mat-icon matSuffix (click)="this.hide = !this.hide;" #tooltip="matTooltip"
+              [matTooltip]="this.hide ? 'Show Password' : 'Hide Password'"
+              matTooltipHideDelay="100000">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </mat-form-field>
+            <!-- <p *ngIf="signinForm.controls['password'].hasError('required') && signinForm.controls['password'].touched" 
+            class="form-error-msg"> Password is required </p> -->
+            <p *ngIf="signinForm.controls['password'].invalid && signinForm.controls['password'].touched" 
+            class="form-error-msg"> Password is invalid </p>
+
+            <div class="pb-16">
+              <mat-checkbox class="mat-primary" name="rememberMe" formControlName="rememberMe">Keep me logged in</mat-checkbox>
+            </div>
+            <button mat-raised-button class="mat-primary rounded-buttons" [disabled]="signinForm.invalid">Sign In</button>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col-lg-4">
+    </div>
+  </div>
+</div>
+</div>
+
+<footer style="background: rgb(39 46 56);">
+  <h4 class="text-center text-white" style="padding: 1%;color: white;position: relative;text-align: center;">Copyright 2023 IZON Technology, Inc. All Rights Reserved.</h4>
+</footer>
+
+
